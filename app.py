@@ -17,7 +17,7 @@ app = FastAPI(
 @app.post("/", response_model=Result)
 def closed_strokes(input: Input):
     if not is_valid_text(input.text):
-        raise HTTPException(status_code=400, detail='Not allowed chacarters into text')
+        raise HTTPException(status_code=400, detail='Not allowed symbols into text. Allowed symbols are: @ # $ % ∞ ‰ & / ( ) = ? ¿ _ -')
     
     count = closed_strokes_count(input.text)
     return Result(closed_strokes_count=count)
