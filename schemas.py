@@ -3,5 +3,5 @@ from pydantic import BaseModel
 class Input(BaseModel):
     text: str
 
-class Result(BaseModel):
+class Output(BaseModel):
     closed_strokes_count: int
